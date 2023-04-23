@@ -1,7 +1,0 @@
-apiVersion: v1
-entries:
-  - name: jenkins-chart
-    version: 0.1.0
-    urls:
-      - jenkins-0.1.0.tgz
-
