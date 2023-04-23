@@ -8,7 +8,7 @@ replicaCount: 1
 
 image:
   repository: jenkins/jenkins
-  tag: stable
+  tag: 2.387.2
   pullPolicy: IfNotPresent
 
 nameOverride: ""
