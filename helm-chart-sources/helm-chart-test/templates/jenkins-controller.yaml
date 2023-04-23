@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "jenkins.fullname" . }}
+  labels:
+    app: {{ template "jenkins.name" . }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "jenkins.name" . }}
+      component: jenkins-controller
+  template:
+    metadata:
+      labels:
+        app: {{ template "jenkins.name" . }}
+        component: jenkins-controller
+    spec:
+      containers:
+        - name: jenkins-controller
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          env:
+            - name: JENKINS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "jenkins.fullname" . }}
+                  key: jenkins-admin-password
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: jenkins-home
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: {{ template "jenkins.fullname" . }}
+
