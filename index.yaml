@@ -2,10 +2,11 @@ apiVersion: v1
 entries:
   jenkins-chart:
   - apiVersion: v2
+    appVersion: "2.387.2"
     created: "2023-04-23T10:28:09.619781+05:30"
     description: A Helm chart for deploying Jenkins
     digest: 4eeb525feb5fd3c6176a96c667908ca92883c66aec520062dcbff7b3d16f5398
-    name: jenkins
+    name: jenkins-chart
     urls:
     - https://charts.jenkins.io/jenkins-0.1.0.tgz
     version: 4.3.22 
