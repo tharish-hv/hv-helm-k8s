@@ -1,3 +1,7 @@
 apiVersion: v1
-entries: {}
-generated: "2023-04-23T10:11:26.003954+05:30"
+entries:
+  - name: jenkins-chart
+    version: 0.1.0
+    description: A Helm chart for Jenkins
+    urls: 
+     - jenkins-0.1.0.tgz
