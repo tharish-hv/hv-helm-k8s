@@ -3,5 +3,5 @@ entries:
   - name: jenkins
     version: 0.1.0
     urls:
-      - https://tharish-hv.github.io/hv-helm-k8s/
+      - jenkins-0.1.0.tgz
 
