@@ -19,4 +19,5 @@ spec:
       prune: true # Optional: set to true if you want to prune resources not managed by ArgoCD
       selfHeal: true # Optional: set to true if you want ArgoCD to automatically self-heal the application
       namespaceCreate: true
+  autoSync: true
 
