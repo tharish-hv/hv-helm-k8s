@@ -1,13 +1,22 @@
-apiVersion: v1
-entries:
-  helm-chart-test:
-  - apiVersion: v1
-    appVersion: "1.0"
-    created: 2019-04-16T09:12:27.955019+02:00
-    description: A Helm chart for Kubernetes
-    digest: 35a4e31bfacc496f1b1bce664652916bb8701cc9df77f1b90534f5234ff297a6
-    name: helm-chart-test
-    urls:
-    - helm-chart-test-0.1.0.tgz
-    version: 0.1.0
-generated: 2019-04-16T09:12:27.951683+02:00
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jenkins
+spec:
+  project: default
+  source:
+    repoURL: https://tharish-hv.github.io/hv-helm-k8s/
+    targetRevision: 0.1.0
+    path:  # If the Helm chart is nested in a subdirectory
+    helm: helm-chart-sources/helm-chart-test
+      valueFiles:
+        - helm-chart-sources/helm-chart-test/values.yaml # If you have a separate values file
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jenkins-1.0  # The namespace where you want to deploy Jenkins
+  syncPolicy:
+    automated:
+      prune: true # Optional: set to true if you want to prune resources not managed by ArgoCD
+      selfHeal: true # Optional: set to true if you want ArgoCD to automatically self-heal the application
+      namespaceCreate: true
+
