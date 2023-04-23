@@ -8,6 +8,6 @@ entries:
     digest: 4eeb525feb5fd3c6176a96c667908ca92883c66aec520062dcbff7b3d16f5398
     name: jenkins-chart
     urls:
-    - https://charts.jenkins.io/jenkins-0.1.0.tgz
+    - jenkins-chart-4.3.22.tgz 
     version: 4.3.22 
 generated: "2023-04-23T10:28:09.618696+05:30"
