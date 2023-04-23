@@ -8,5 +8,5 @@ entries:
     name: jenkins
     urls:
     - https://charts.jenkins.io/jenkins-0.1.0.tgz
-    version: 0.1.0
+    version: 4.3.22 
 generated: "2023-04-23T10:28:09.618696+05:30"
