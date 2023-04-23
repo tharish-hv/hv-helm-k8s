@@ -1,23 +1,20 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: jenkins
-spec:
-  project: default
-  source:
-    repoURL: https://tharish-hv.github.io/hv-helm-k8s/
-    targetRevision: 0.1.0
-    path:  # If the Helm chart is nested in a subdirectory
-    helm: helm-chart-sources/helm-chart-test
-      valueFiles:
-        - helm-chart-sources/helm-chart-test/values.yaml # If you have a separate values file
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: jenkins-1.0  # The namespace where you want to deploy Jenkins
-  syncPolicy:
-    automated:
-      prune: true # Optional: set to true if you want to prune resources not managed by ArgoCD
-      selfHeal: true # Optional: set to true if you want ArgoCD to automatically self-heal the application
-      namespaceCreate: true
-  autoSync: true
+apiVersion: v1
+entries:
+  - name: jenkins
+    version: 2.289.3
+    urls:
+      - https://github.com/jenkinsci/helm-charts/releases/download/jenkins-2.289.3/jenkins-2.289.3.tgz
+    appVersion: 2.289.3
+    created: "2023-04-23T00:00:00Z"
+    description: "Official Jenkins Helm chart"
+    maintainers:
+      - name: "Jenkins Project"
+        email: "jenkinsci-users@googlegroups.com"
+    keywords:
+      - "jenkins"
+      - "helm"
+      - "chart"
+    sources:
+      - "https://github.com/jenkinsci/helm-charts"
+    icon: "https://github.com/jenkinsci/helm-charts/raw/main/jenkins.png"
 
