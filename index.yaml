@@ -1,20 +1,7 @@
 apiVersion: v1
 entries:
   - name: jenkins
-    version: 2.289.3
+    version: 0.1.0
     urls:
-      - https://github.com/jenkinsci/helm-charts/releases/download/jenkins-2.289.3/jenkins-2.289.3.tgz
-    appVersion: 2.289.3
-    created: "2023-04-23T00:00:00Z"
-    description: "Official Jenkins Helm chart"
-    maintainers:
-      - name: "Jenkins Project"
-        email: "jenkinsci-users@googlegroups.com"
-    keywords:
-      - "jenkins"
-      - "helm"
-      - "chart"
-    sources:
-      - "https://github.com/jenkinsci/helm-charts"
-    icon: "https://github.com/jenkinsci/helm-charts/raw/main/jenkins.png"
+      - https://tharish-hv.github.io/hv-helm-k8s/
 

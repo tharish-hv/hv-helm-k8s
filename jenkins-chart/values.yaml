@@ -1,0 +1,6 @@
+# values.yaml
+jenkins:
+  image: jenkins/jenkins
+  tag: 2.289.3
+  imagePullPolicy: Always
+  serviceType: ClusterIP
